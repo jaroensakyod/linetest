@@ -4,7 +4,7 @@ import liff from '@line/liff';
 import { useEffect, useState } from 'react';
 
 function App() {
-
+          //function show profile
   const [pictureUrl, setPictureUrl] = useState(logo);
   const [idToken, setIdToken] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -17,6 +17,7 @@ function App() {
   }
 
   const initLine = () => {
+            // Line LIFF ID
     liff.init({ liffId: '1657190472-QMekRe4A' }, () => {
       if (liff.isLoggedIn()) {
         runApp();
@@ -27,6 +28,7 @@ function App() {
   }
 
   const runApp = () => {
+            //AppComponent 
     const idToken = liff.getIDToken();
     setIdToken(idToken);
     liff.getProfile().then(profile => {
@@ -47,7 +49,7 @@ function App() {
       <header className="App-header">
       <div style={{ textAlign: "center" }}>
         <h1>React with LINE Login test bot1</h1>
-        <hr/>
+        //show profile
         <img src={pictureUrl} width="300px" height="300px"/>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>id token: </b> {idToken}</p>
         <p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
