@@ -28,7 +28,7 @@ function App() {
   }
 
   const runApp = () => {
-            //AppComponent 
+            // element
     const idToken = liff.getIDToken();
     setIdToken(idToken);
     liff.getProfile().then(profile => {
